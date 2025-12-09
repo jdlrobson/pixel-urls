@@ -1,0 +1,58 @@
+{
+  "id": "backstop_default",
+  "viewports": [
+    {
+      "label": "tablet",
+      "width": 1024,
+      "height": 768
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [
+    {
+      "label": "Taylor Swift",
+      "url": "https://en.wikipedia.org/wiki/Taylor_Swift?useparsoid=0",
+      "referenceUrl": "https://en.wikipedia.org/wiki/Taylor_Swift?useparsoid=1",
+      "misMatchThreshold" : 0.6,
+      "removeSelectors": [ "#siteNotice" ],
+      "delay": 4000,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Hospet",
+      "url": "https://en.wikivoyage.org/wiki/Hospet?useparsoid=0",
+      "referenceUrl": "https://en.wikivoyage.org/wiki/Hospet?useparsoid=1",
+      "misMatchThreshold" : 0.6,
+      "removeSelectors": [ "#siteNotice", ".listingeditor-add" ],
+      "delay": 4000,
+      "requireSameDimensions": true
+    },
+
+    {
+      "label": "Domus_Aurea",
+      "url": "https://it.wikipedia.org/w/index.php?title=Domus_Aurea_(vestibolo_e_stagno)&useparsoid=0",
+      "referenceUrl": "https://it.wikipedia.org/w/index.php?title=Domus_Aurea_(vestibolo_e_stagno)&useparsoid=1",
+      "misMatchThreshold" : 0.6,
+      "removeSelectors": [ "#siteNotice", ".hatnote-icon", ".wikitable" ],
+      "delay": 4000,
+      "requireSameDimensions": true
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
