@@ -1,2 +1,3 @@
 node_modules/*
-backstop_data/*
+backstop_data/html_report
+backstop_data/bitmaps_*
